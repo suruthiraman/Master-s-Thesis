@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    app1:
+        image: dockercloud/hello-world
+        container_name: app1
+        ports:
+            - "8011:8080"
+
+    app2:
+        image: dockercloud/hello-world
+        container_name: app2
+        ports:
+            - "8012:8080"
+
+    haproxy:
+        build: ./haproxy
+        container_name: haproxy
+        ports:
+            - "8080:8080"
